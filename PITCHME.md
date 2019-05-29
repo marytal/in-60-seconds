@@ -4,7 +4,7 @@
 
 @snap[west span-30]
 
-### Prime time development
+### The best place on Earth
 
 @snapend
 
@@ -17,7 +17,10 @@
 
 ---
 
+@snap[midpoint span-65]
+
 ![](assets/img/account.png)
+@snapend
 
 ---
 
