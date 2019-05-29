@@ -34,13 +34,12 @@
 @snapend
 
 @snap[west span-55]
-@ul[spaced text-white]
 
 - You will be amazed
 - What you can achieve
 - _With a little imagination..._
 - And **GitPitch Markdown**
-  @ulend
+
   @snapend
 
 @snap[east span-45]
