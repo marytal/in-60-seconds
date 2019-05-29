@@ -14,10 +14,8 @@
 
 @snap[south-west span-65]
 
-- Jeff Bezos
-
+@quote[It's not an experiment if you know it's going to work. - Jeff Bezos]
 @snapend
-@quote[It's not an experiment if you know it's going to work.]
 
 ---
 
