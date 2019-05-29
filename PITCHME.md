@@ -4,18 +4,24 @@
 
 @snap[west span-30]
 
-### Where fun goes to DIE.
+### Prime time development
 
 @snapend
 
 ---
 
-# The Journey
-
-@snap[south-west span-65]
+@snap[midpoint span-65]
 
 @quote[It's not an experiment if you know it's going to work. - Jeff Bezos]
 @snapend
+
+---
+
+![](assets/img/account.png)
+
+---
+
+![](assets/img/seller-central.png)
 
 ---
 
