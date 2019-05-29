@@ -6,6 +6,18 @@
 
 # New slide?
 
+```
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, world!")
+}
+```
+
+@[10, 13-16]
+
 ---
 
 ## Add Some Slide Candy
