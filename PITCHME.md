@@ -1,10 +1,22 @@
 # Amazon
 
+@snap[west span-50]
+
 ## It's so much fun.
+
+@snapend
+
+@snap[east span-50]
+![](assets/img/amazon.png)
+@snapend
 
 ---
 
 # New slide?
+
+@snap[north-east span-65]
+@quote[Beware of geeks bearing formulas.]
+@snapend
 
 ```
 package main
