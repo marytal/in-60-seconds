@@ -10,7 +10,7 @@
 
 @snapend
 
-@snap[east span-30]
+@snap[east span-50]
 ![](assets/img/amazon.png)
 @snapend
 
