@@ -4,17 +4,19 @@
 
 @snap[west span-30]
 
-### It's so much fun.
+### Where fun goes to DIE.
 
 @snapend
 
 ---
 
-# New slide?
+# The Journey
 
-@snap[north-east span-65]
-@quote[Beware of geeks bearing formulas.]
-@snapend
+@snap[south-west span-65]
+@quote[It's not an experiment if you know it's going to work.]
+
+- Jeff Bezos
+  @snapend
 
 ```
 package main
