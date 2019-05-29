@@ -1,17 +1,11 @@
 @snap[north span-100]
-
-# Amazon
-
+![](assets/img/amazon.png)
 @snapend
 
 @snap[west span-30]
 
 ### It's so much fun.
 
-@snapend
-
-@snap[east span-50]
-![](assets/img/amazon.png)
 @snapend
 
 ---
