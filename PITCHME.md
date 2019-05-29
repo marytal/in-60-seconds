@@ -13,10 +13,11 @@
 # The Journey
 
 @snap[south-west span-65]
-@quote[It's not an experiment if you know it's going to work.]
 
 - Jeff Bezos
-  @snapend
+
+@snapend
+@quote[It's not an experiment if you know it's going to work.]
 
 ---
 
