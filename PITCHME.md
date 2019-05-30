@@ -66,6 +66,40 @@
 ---
 
 ```
+module Clockwork
+
+...
+  every(1.minute, "Fetch and process inventory reports") { FetchInventoryReportJob.perform_async }
+  every(1.minute, "Group inventory report lines") { GroupInventoryReportLinesJob.perform_async }
+...
+
+end
+```
+
+@[4]
+@[5]
+
+---
+
+```
+module ShopJob
+  class FetchInventoryReportJob < MwsBase
+
+  # We ask Amazon to get a report ready and only after ~minutes can we fetch it
+
+  AmazonInventoryReportManager.new(shop).request_report # first
+
+  # next time the job runs:
+
+  AmazonInventoryReportManager.new(shop).fetch_report # after some time
+
+  end
+end
+```
+
+---
+
+```
 # inventory_report_lines
 
 create_table "inventory_report_lines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
@@ -93,6 +127,20 @@ end
 @[6-7]
 @[9]
 @title[Inventory Report Lines]
+
+---
+
+```
+def fetch_report
+  process_report #
+
+  # if any inventory_report_lines aren't in the report, delete them.
+  delete_unreported_lines
+  update_offers
+  discard_report
+end
+
+```
 
 ---
 
