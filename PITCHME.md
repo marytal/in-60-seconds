@@ -132,10 +132,14 @@ end
 
 ```
 def fetch_report
-  process_report #
 
-  # if any inventory_report_lines aren't in the report, delete them.
+  # create instances of inventory_report_lines for each line in CSV
+  process_report
+
+  # if any existing inventory_report_lines aren't in the report, delete them.
   delete_unreported_lines
+
+  # sets offer.in_inventory_report = true
   update_offers
   discard_report
 end
