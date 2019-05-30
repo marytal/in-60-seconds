@@ -43,7 +43,6 @@
   - European bar code standard
 - ISBN
   - International book specific barcode
-  - Plain text list item @note[Cool! Fragment specific speaker notes :)]
 
 @ulend
 
