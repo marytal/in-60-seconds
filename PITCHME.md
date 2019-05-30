@@ -24,7 +24,7 @@
 
 ---
 
-![](assets/img/seller-central.png)
+![](assets/img/seller-central.jpg)
 
 ---
 
