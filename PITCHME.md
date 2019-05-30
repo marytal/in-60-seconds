@@ -34,8 +34,8 @@
 
 @snapend
 
-@snap[south-west span-100]
-@ul[spaced](false)
+@snap[west span-100]
+@ul[spaced]
 
 - UPC
   - US barcode for retail packaging
