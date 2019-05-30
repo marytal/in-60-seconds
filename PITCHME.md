@@ -110,30 +110,6 @@ SKU-444	B01ASC10LE	100.00	54
 ---
 
 ```ruby
-# inventory_report_lines
-
-create_table "inventory_report_lines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
-  t.integer "shop_id", null: false
-  t.integer "offer_id"
-  t.string "asin", limit: 25, null: false
-  t.string "parent_asin", limit: 25
-  t.string "price", limit: 20
-  t.string "quantity", limit: 20
-  t.string "seller_sku", limit: 40, null: false
-  ...
-end
-
-```
-
-@[3]
-@[4]
-@[6-7]
-@[8]
-@title[Inventory Report Lines]
-
----
-
-```ruby
 def fetch_report
 
   # create instances of inventory_report_lines for each line in CSV
@@ -159,19 +135,27 @@ end
 
 ---
 
+```ruby
+# inventory_report_lines
+
+create_table "inventory_report_lines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+  t.integer "shop_id", null: false
+  t.integer "offer_id"
+  t.string "asin", limit: 25, null: false
+  t.string "parent_asin", limit: 25
+  t.string "price", limit: 20
+  t.string "quantity", limit: 20
+  t.string "seller_sku", limit: 40, null: false
+  ...
+end
+
 ```
-package main
 
-import "fmt"
-
-func main() {
-    fmt.Println("Hello, world!")
-}
-```
-
-@[1]
-@[3-8]
-@title[Code]
+@[3]
+@[4]
+@[6-7]
+@[10]
+@title[Inventory Report Lines]
 
 ---
 
