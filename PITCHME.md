@@ -62,6 +62,36 @@
 ---
 
 ```
+# inventory_report_lines
+
+create_table "inventory_report_lines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+  t.integer "shop_id", null: false
+  t.integer "offer_id"
+  t.string "asin", limit: 25, null: false
+  t.string "parent_asin", limit: 25
+  t.string "price", limit: 20
+  t.string "quantity", limit: 20
+  t.string "seller_sku", limit: 40, null: false
+  t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+  t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+  t.index ["asin"], name: "index_inventory_report_lines_on_asin"
+  t.index ["offer_id"], name: "index_inventory_report_lines_on_offer_id"
+  t.index ["parent_asin"], name: "index_inventory_report_lines_on_parent_asin"
+  t.index ["shop_id", "parent_asin"], name: "index_inventory_report_lines_on_shop_id_and_parent_asin"
+  t.index ["shop_id", "seller_sku"], name: "index_inventory_report_lines_on_shop_id_and_seller_sku", unique: true
+  t.index ["updated_at"], name: "index_inventory_report_lines_on_updated_at"
+end
+
+```
+
+@[1]
+@[4-5]
+@[7]
+@title[Inventory Report Lines]
+
+---
+
+```
 package main
 
 import "fmt"
