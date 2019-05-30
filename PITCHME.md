@@ -19,7 +19,7 @@
 
 @snap[midpoint span-65]
 
-![](assets/img/account.png)
+![](assets/img/account.jpg)
 @snapend
 
 ---
