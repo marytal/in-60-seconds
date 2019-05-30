@@ -142,12 +142,12 @@ def fetch_report
   # if any existing inventory_report_lines aren't in the report, delete them.
   delete_unreported_lines
 
-  # sets offer.in_inventory_report = true for offers (line items) that were found
-  # sets offer.in_inventory_report = false for offers that were not
+  # sets offer.in_inventory_report = true for offers with matching skews
+  # sets offer.in_inventory_report = false for offers with no matching skews
+  # marks human status of offers not in inventory report as stale (will discuss l8r)
   update_offers
 
-
-
+  # clear inventory report request ID
   discard_report
 end
 
