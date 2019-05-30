@@ -34,8 +34,8 @@
 
 @snapend
 
-@snap[midpoint span-100]
-@ul[spaced]
+@snap[south-west span-100]
+@ul[spaced](false)
 
 - UPC
   - US barcode for retail packaging
@@ -43,6 +43,12 @@
   - European bar code standard
 - ISBN
   - International book specific barcode
+  - Plain text list item @note[Cool! Fragment specific speaker notes :)]
+
+@ulend
+
+---
+
 - ASIN
   - For books, ASIN is the same as ISBN
   - ASIN is created when an item is added to the Amazon catalog
