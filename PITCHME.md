@@ -48,13 +48,14 @@
 
 ---
 
-### ASIN
+### What's an ASIN?
 
 @ul
 
-- ASIN is created when an item is added to the Amazon catalog
-- Merchants can either add an ASIN of an existing item in Amazon's catalog OR when they add a never-before-listed item, a new ASIN is created for them.
-- For books, ASIN is the same as ISBN
+- A new ASIN is created when an item is added to the Amazon catalog
+- When merchants add an existing item (Colgate toothpaste?), the existing ASIN is used
+- When merchants add a never-before-listed item, a new ASIN is created for them
+- For books, ASIN is the same as ISBN (super fun fact)
 
 @ulend
 
