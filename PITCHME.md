@@ -61,6 +61,10 @@
 
 ---
 
+![](assets/img/listings.png)
+
+---
+
 ```
 # inventory_report_lines
 
@@ -85,6 +89,7 @@ end
 ```
 
 @[3]
+@[4]
 @[6-7]
 @[9]
 @title[Inventory Report Lines]
