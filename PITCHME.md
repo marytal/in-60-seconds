@@ -50,12 +50,13 @@
 
 ### ASIN
 
-- For books, ASIN is the same as ISBN
+@ul
+
 - ASIN is created when an item is added to the Amazon catalog
 - Merchants can either add an ASIN of an existing item in Amazon's catalog OR when they add a never-before-listed item, a new ASIN is created for them.
+- For books, ASIN is the same as ISBN
 
 @ulend
-@snapend
 
 ---
 
