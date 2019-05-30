@@ -34,7 +34,7 @@
 
 @snapend
 
-@snap[midpoint span-30]
+@snap[midpoint span-100]
 @ul[spaced]
 
 - UPC
