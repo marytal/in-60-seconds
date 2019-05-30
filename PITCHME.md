@@ -30,7 +30,7 @@
 
 @snap[north-west]
 
-#### What's an ASIN?
+#### Amazon's Catalog
 
 @snapend
 
@@ -48,10 +48,11 @@
 
 ---
 
-- ASIN
-  - For books, ASIN is the same as ISBN
-  - ASIN is created when an item is added to the Amazon catalog
-  - Merchants can either add an ASIN of an existing item in Amazon's catalog OR when they add a never-before-listed item, a new ASIN is created for them.
+### ASIN
+
+- For books, ASIN is the same as ISBN
+- ASIN is created when an item is added to the Amazon catalog
+- Merchants can either add an ASIN of an existing item in Amazon's catalog OR when they add a never-before-listed item, a new ASIN is created for them.
 
 @ulend
 @snapend
