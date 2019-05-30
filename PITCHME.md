@@ -65,7 +65,7 @@
 
 ---
 
-```
+```ruby
 module Clockwork
 
 ...
@@ -81,7 +81,7 @@ end
 
 ---
 
-```
+```ruby
 module ShopJob
   class FetchInventoryReportJob < MwsBase
 
@@ -99,7 +99,17 @@ end
 
 ---
 
+```csv
+# inventory report CSV
+
+sku	asin	price	quantity
+SKU-222	B01ASC09LE	1000.00	40
+SKU-444	B01ASC10LE	100.00	54
 ```
+
+---
+
+```ruby
 # inventory_report_lines
 
 create_table "inventory_report_lines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
@@ -110,14 +120,7 @@ create_table "inventory_report_lines", force: :cascade, options: "ENGINE=InnoDB 
   t.string "price", limit: 20
   t.string "quantity", limit: 20
   t.string "seller_sku", limit: 40, null: false
-  t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
-  t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
-  t.index ["asin"], name: "index_inventory_report_lines_on_asin"
-  t.index ["offer_id"], name: "index_inventory_report_lines_on_offer_id"
-  t.index ["parent_asin"], name: "index_inventory_report_lines_on_parent_asin"
-  t.index ["shop_id", "parent_asin"], name: "index_inventory_report_lines_on_shop_id_and_parent_asin"
-  t.index ["shop_id", "seller_sku"], name: "index_inventory_report_lines_on_shop_id_and_seller_sku", unique: true
-  t.index ["updated_at"], name: "index_inventory_report_lines_on_updated_at"
+  ...
 end
 
 ```
@@ -125,12 +128,12 @@ end
 @[3]
 @[4]
 @[6-7]
-@[9]
+@[8]
 @title[Inventory Report Lines]
 
 ---
 
-```
+```ruby
 def fetch_report
 
   # create instances of inventory_report_lines for each line in CSV
@@ -139,12 +142,20 @@ def fetch_report
   # if any existing inventory_report_lines aren't in the report, delete them.
   delete_unreported_lines
 
-  # sets offer.in_inventory_report = true
+  # sets offer.in_inventory_report = true for offers (line items) that were found
+  # sets offer.in_inventory_report = false for offers that were not
   update_offers
+
+
+
   discard_report
 end
 
 ```
+
+@[4]
+@[7]
+@[10]
 
 ---
 
