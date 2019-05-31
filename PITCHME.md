@@ -79,7 +79,12 @@ end
 @[4]
 @[5]
 
----
++++
+
+> Quote testing
+> One more quote testing.
+
++++
 
 ```ruby
 module ShopJob
@@ -97,7 +102,7 @@ module ShopJob
 end
 ```
 
----
++++
 
 ```csv
 # inventory report CSV
@@ -107,7 +112,7 @@ SKU-222	B01ASC09LE	1000.00	40
 SKU-444	B01ASC10LE	100.00	54
 ```
 
----
++++
 
 ```ruby
 def fetch_report
@@ -133,7 +138,7 @@ end
 @[7]
 @[10]
 
----
++++
 
 ```ruby
 # inventory_report_lines
@@ -156,6 +161,63 @@ end
 @[6-7]
 @[10]
 @title[Inventory Report Lines]
+
+<!-- Is this how we fetch the ASIN?  -->
+
+@note[It's mapped to a an offer ID, if one exists]
+
++++
+
+```ruby
+class GroupInventoryReportLinesJob < ShopJobCreator
+  def shops
+    Shop.active_shops.joins('INNER JOIN inventory_report_lines ON shops.id=inventory_report_lines.shop_id')
+      .where(inventory_report_lines: { parent_asin: nil })
+      .where(mws_inventory_report_request_id: nil).distinct
+  end
+end
+```
+
++++
+
+```ruby
+module ShopJob
+  class GroupInventoryReportLinesJob < MwsBase
+    def work
+      ...
+      InventoryReportLineParentAsinFetcher.new(shop).fetch
+    end
+  end
+end
+
+```
+
++++
+
+```ruby
+
+class InventoryReportLineParentAsinFetcher
+  # inventory report line = IRL
+  ...
+  # recursively go through
+  current_line = InventoryReportLine.where(shop: shop, parent_asin: nil).first
+
+  # try to fetch from Amazon (if it doesn't exist, delete the IRL)
+  current_listing = find_listing(current_line.asin)
+
+  # if it exists fetch the parent listing and set the parent_asin on the IRL
+  parent_listing = find_listing(current_listing.parent_asin)
+  current_line.parent_asin = parent_listing&.asin || current_line.asin
+end
+
+```
+
++++
+
+Why we do this? Groups products together into a hierarchy
+
+Diagram of offers to offer sets to merchant listing relationship, with notes about what
+An ASIN vs. parent ASIN are.
 
 ---
 
